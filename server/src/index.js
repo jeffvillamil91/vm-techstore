@@ -14,6 +14,7 @@ import usersRouter from './routes/users.js';
 import { ensureDatabaseTables } from './db/init.js';
 
 const app = express();
+app.set('trust proxy', 1);
 const port = Number(process.env.PORT || 4000);
 const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 const allowedOrigins = new Set([clientOrigin, 'http://localhost:5173', 'http://127.0.0.1:5173']);
@@ -50,9 +51,9 @@ app.use((err, _req, res, _next) => {
 
 ensureDatabaseTables()
   .then(() => {
-    app.listen(port, () => {
-  console.log(`Servidor iniciado correctamente en el puerto ${PORT}`);
-});
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Servidor iniciado correctamente en el puerto ${port}`);
+    });
   })
   .catch((error) => {
     console.error('No se pudo inicializar la base de datos', error);
