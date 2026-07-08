@@ -50,7 +50,7 @@ app.use((err, _req, res, _next) => {
 
 ensureDatabaseTables()
   .then(() => {
-    app.listen(PORT, () => {
+    app.listen(port, () => {
   console.log(`Servidor iniciado correctamente en el puerto ${PORT}`);
 });
   })
