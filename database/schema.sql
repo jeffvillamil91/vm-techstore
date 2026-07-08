@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS vm_techstore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE vm_techstore;
+USE bieph0u4rmlqqyesl1u2;
 
 CREATE TABLE IF NOT EXISTS products (
   id INT AUTO_INCREMENT PRIMARY KEY,

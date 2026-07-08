@@ -50,9 +50,9 @@ app.use((err, _req, res, _next) => {
 
 ensureDatabaseTables()
   .then(() => {
-    app.listen(port, () => {
-      console.log(`VM TechStore API running on http://localhost:${port}`);
-    });
+    app.listen(PORT, () => {
+  console.log(`Servidor iniciado correctamente en el puerto ${PORT}`);
+});
   })
   .catch((error) => {
     console.error('No se pudo inicializar la base de datos', error);
