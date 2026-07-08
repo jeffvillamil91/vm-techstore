@@ -1,0 +1,15 @@
+{
+  "name": "vm-techstore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicacion web CRUD para Centro de Soluciones Tecnologicas e Informaticas VM.",
+  "scripts": {
+    "install:all": "npm.cmd install --prefix server && npm.cmd install --prefix client",
+    "dev": "concurrently \"npm.cmd run dev --prefix server\" \"npm.cmd run dev --prefix client\"",
+    "start": "npm.cmd run start --prefix server",
+    "build": "npm.cmd run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
