@@ -27,7 +27,7 @@ function validate(schema) {
   };
 }
 
-router.get('/', async (req, res, next) => {
+router.get('/',requireAuth, async (req, res, next) => {
   try {
     const search = `%${req.query.search || ''}%`;
     const rows = await query(
