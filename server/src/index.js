@@ -17,7 +17,13 @@ const app = express();
 app.set('trust proxy', 1);
 const port = Number(process.env.PORT || 4000);
 const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
-const allowedOrigins = new Set([clientOrigin, 'http://localhost:5173', 'http://127.0.0.1:5173']);
+const allowedOrigins = new Set([
+  clientOrigin,
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'https://vm-techstore.vercel.app',
+  'https://vm-techstore-jeff-vmtechstore.vercel.app'
+]);
 
 app.use(helmet());
 app.use(cors({
